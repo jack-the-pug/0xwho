@@ -1,0 +1,10 @@
+#OXWHO-tip{
+    position:absolute;
+    z-index: 2147483647;
+    background: rgba(253,230,138,0.8);
+    padding: 4px 5px;
+    color: black;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-weight: 500;
+}

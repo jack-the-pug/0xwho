@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "0xWho?",
+    "description": "Sorry, 0x who?",
+    "version": "0.1.0",
+    "icons": {
+        "48":"0xwho-icon-48.png"
+    },
+    "background":{
+        "service_worker": "js/background.js"
+    },
+    "action": {
+       
+    },
+    "options_ui":{
+        "page":"src/options/index.html",
+        "open_in_tab": true,
+        "browser_style": true
+    },
+    "permissions": ["storage"],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "content_scripts": [{
+        "js": ["js/contentJs.js"],
+        "css":["content.css"],
+        "matches": ["<all_urls>"],
+        "run_at":"document_end"
+    }]
+}

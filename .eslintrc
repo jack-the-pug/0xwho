@@ -1,0 +1,83 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "jsx": true,
+      "sourceType": "module",
+      "useJSXTextNode": true
+    },
+    "extends": [
+      "eslint-config-airbnb-base",
+      "eslint-config-airbnb-base/rules/strict",
+      "eslint-config-airbnb/rules/react",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+    ],
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest/globals": true
+    },
+    "plugins": ["jest", "@typescript-eslint", "react-intl", "class-property", "simple-import-sort"],
+    "rules": {
+      "keyword-spacing":["error", { "before": true,"affter":true }],
+      "react/jsx-filename-extension": "off",
+      "max-len": "off",
+      "semi": ["error", "never"],
+      "comma-dangle": 0,
+      "import/prefer-default-export": "off",
+      "no-console": "off",
+      "react/jsx-wrap-multilines": "off",
+      "react/prefer-stateless-function": "off",
+      "react/no-array-index-key": "off",
+      "camelcase": "off",
+      "dot-notation": "off",
+      "no-use-before-define": "off",
+      "arrow-parens": "off",
+      "import/no-extraneous-dependencies": "off",
+      "react/jsx-no-bind": "off",
+      "consistent-return": "off",
+      "react/sort-comp": "off",
+      "jsx-a11y/accessible-emoji": "off",
+      "no-plusplus": "off",
+      "no-case-declarations": "off",
+      "no-continue": "off",
+      "new-cap": "off",
+      "import/no-named-as-default": "off",
+      "react/require-default-props": "off",
+      "no-new": "off",
+      "indnet": "off",
+      "no-nested-ternary": "off",
+      "simple-import-sort/sort": "warn",
+      "no-underscore-dangle": "off",
+      "no-template-curly-in-string": "off",
+      "prefer-destructuring": "off",
+      "react-intl/no-unwrapped-jsx-text": 2,
+      "react/destructuring-assignment": "off",
+      "react/prop-types": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/member-delimiter-style": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/camelcase": "off"
+     
+    },
+    "overrides": [
+      {
+        "files": ["**/*.test.ts"],
+        "env": {
+          "jest": true
+        }
+      }
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src/**"],
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    }
+  }
+  

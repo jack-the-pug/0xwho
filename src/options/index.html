@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0xWho Address Book</title>
+    <style>
+        html,body{
+            padding: 10px;
+            width: calc(100% - 10px);
+            position: relative;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Menlo, Monaco, 'Courier New', monospace;
+            color: black;
+        }
+        div{
+            display:inline-block;
+            position: relative;
+        }
+        label{
+            color: gray;
+        }
+        table{
+            margin-top: 30px;
+        }
+        thead{
+            font-weight: bolder;
+        }
+        td{
+            letter-spacing: 1px;
+        }
+        #container{
+            margin-top: 30px;
+        }
+        .profile{
+            margin-top: 5px;
+        }
+        .field{
+            font-weight: bolder;
+        }
+        .action{
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            gap:5px;
+        }
+        button{
+            background: white;
+            border: 1px solid gray;
+            outline: none;
+            font-family: Menlo, Monaco, 'Courier New', monospace;
+        }
+        button:hover{
+            background: rgba(0,0,0,0.1);
+            font-family: Menlo, Monaco, 'Courier New', monospace;
+        }
+        input{
+            font-family: Menlo, Monaco, 'Courier New', monospace;
+        }
+        input::placeholder{
+            font-family: Menlo, Monaco, 'Courier New', monospace;
+        }
+        dialog{
+            border-radius: 4px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+   <h1>0xWho Address Book</h1>
+   <form id="formContent" name="form">
+    <input type="text" id="address" name="address" oninvalid="invalidAddress" required placeholder="address"/>
+    <input type="text" id="name" name="name" required placeholder="name"/>
+    <button type="submit" id="submitButton">add</button>
+   </form>
+   <div></div>
+   <table style="min-width: 320px;">
+       <thead>
+           <tr>
+               <td>Name</td>
+               <td>Address</td>
+               <td>Action</td>
+           </tr>
+       </thead>
+       <tbody id="container">
+       </tbody>
+   </table>
+
+  <dialog id="removeDialog">
+    <h3> you sure? </h3>
+    <form method="dialog" >
+      <div class="action">
+        <button value="cancel">cancel</button>
+        <button id="removeDialogConfirmBtn" value="default">delete</button>
+      </div>
+     </form>
+   </dialog>
+   <dialog id="editDialog">
+      <form method="dialog" id="editForm" name="editForm">
+        <input type="text" id="address" name="address" required placeholder="address"/>
+        <input type="text" id="name" name="name" required placeholder="name"/>
+        <br>
+        <div class="action">
+            <button value="cancel">cancel</button>
+            <button type="submit" id="editDialogSubmitButton">submit</button>
+        </div>
+     </form>
+   </dialog>
+   <script src="/js/optionsJs.js"></script>
+</body>
+</html>
