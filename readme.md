@@ -28,14 +28,13 @@ yarn build
 
 ## Why not make the extenstion available through the chrome web store?
 
-It's dangerous to use a chrome ext that can temper the content of your webpages.
+It's dangerous to use a chrome ext that can tamper the content of your webpages.
 
-So, read the code and build it yourself.
-
-## 0xWho: lite version
+So, read the code and build it yourself. And also don't forget to drink plenty of water today and always get enough sleep.
+## 🐒 0xWho: lite version
 
 The 0xWho ext tries to be lightweight as much as possible, but if you are super busy, we have a even lighter version for you:
 
-Introducing: 0xwho, the Tampermonkey script version.
+Introducing: 0xWho, the Tampermonkey script version.
 
 Now available at [greasyfork.org](https://greasyfork.org/en/scripts/446598-0xwho).
