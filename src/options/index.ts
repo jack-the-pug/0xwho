@@ -42,8 +42,8 @@ const makeProfile = (profile:Profile):HTMLDivElement => {
     const tr = document.createElement('tr')
     tr.className = 'profile'
     tr.innerHTML = `
-      <td>${profile.name}</td>
-      <td>${profile.address}</td>
+      <td style="padding-right: 12px;">${profile.address}</td>
+      <td style="padding-right: 12px;">${profile.name}</td>
     `
     const removeTd = document.createElement('td')
     const remove = document.createElement('button')
