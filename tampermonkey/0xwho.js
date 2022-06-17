@@ -13,13 +13,15 @@
 (function() {
     'use strict';
 
+// ==== THIS IS YOUR ADDRESS BOOK ====
 const addressBook = {
-    "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045":"vitalik",
+//  "address"                                     "name"
+    "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": "vitalik",
 }
+// ==== /END OF YOUR ADDRESS BOOK ====
 
 class OXWHOInject{
     constructor(){
-       
         this.addressMap = new Map()
         for(const address in addressBook){
             this.addressMap.set(address.toLowerCase(),{
@@ -50,9 +52,7 @@ class OXWHOInject{
         },1000)
        })
        document.addEventListener('selectionchange',() => this.handleSelectionchange())
-       
-      
-       // replace address when page change
+
        document.addEventListener('hashchange',this.changeDom)
        document.addEventListener('popstate',this.changeDom)
        document.addEventListener('pushstate',this.changeDom)
@@ -75,22 +75,18 @@ class OXWHOInject{
     }
      getAddressDoms(){
         const doms = document.querySelectorAll('* :not(script) :not(style) :not(a) :not(img) :not(input) :not(textarea) ')
-        /**
-         *  maybe have multi same address in page. The key must be unique.
-         *  so we use dom as key. 
-         */
         const nodeMap = new Map()
         doms.forEach((dom) => {
-           let text = dom.textContent?.trim()   
+           let text = dom.textContent?.trim()
            if(!text || dom.childNodes.length !== 1 || dom.firstChild?.nodeName !== '#text') return
-           // maybe have multi-address in one text
+           // there can be multiple matches (addresses) in one element
            const textIter = text.matchAll(/0x[a-fA-F0-9]{40}/g)
            for(let matchRes of textIter){
              const address = matchRes[0]
              if(this.addressMap.has(address.toLowerCase())){
-                // bind source address in dom. Then we can get it when we click.
+                // save the original address, for later revertion of the inline labeling edit
                 dom.OXWHO_address = address
-                nodeMap.set(dom,text)
+                nodeMap.set(dom, dom.textContent)
              }
            }
         })
@@ -129,20 +125,19 @@ class OXWHOInject{
         let [text,el] = selection
         if(this.isAddress(text)){
             text = text.toLowerCase()
-              // show tooltip when is address
             if(el.childNodes.length === 0) el = el.parentElement
             const position = this.getPosition(el)
             const profile = this.addressMap.get(text.toLowerCase())
             this.addTooltip(position,profile)
             return
         }
-        // if is format address
+
         if(!this.formatAddressMap.has(text.toLowerCase())) return
         const address = this.formatAddressMap.get(text.toLowerCase())
-        // recovery address
+
         if (this.isAddress(address)) {
             // @ts-ignore
-            // must use textContent to replace.
+            // must use textContent to replace
             el.textContent = el.textContent?.replace(text, el.OXWHO_address)
             const selc = window.getSelection()
             selc?.removeAllRanges()
@@ -180,6 +175,7 @@ class OXWHOInject{
             border-radius: 4px;
             margin-top: 5px;
             font-weight: 500;
+            font-size: 13px;
         }
        `
        document.head.appendChild(style)
