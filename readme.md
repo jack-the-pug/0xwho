@@ -38,4 +38,4 @@ The 0xWho ext tries to be lightweight as much as possible, but if you are super 
 
 Introducing: 0xwho, the Tampermonkey script version.
 
-Now available at `tampermonkey/0xwho.js`
+Now available at [greasyfork.org](https://greasyfork.org/en/scripts/446598-0xwho).

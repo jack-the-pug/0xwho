@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Sorry, 0x who?
 // @author       JtP
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAS1BMVEUAAAC+Ngv/ckG/NQz/b0O/Ngz/cEO/Ng3/cEOrMAuyNQ+zNhCzNhG7PBW/NgzBQRrDQhvFRBzHRR7OSyLaUyr1aT34aj77bUD/cEOHzN+4AAAACXRSTlMALy+np/Ly9PT89qvQAAAAkklEQVR42uzVQwLDQABA0bodG/e/aB3b/Ou8aHRYUcfzlVJf2O1ySl1/p7QI/HokxZlWAX9JgGs1uCUArQZ+CrADgbFoAsC3+kD+gKwN0A+g2gD/AK4NxA+IYT76l0RIzmqkjeYQcm1qAqfAP+XqAEtAGLE1AAOxWA0AEjUG812iO2h+oDQ/sl4jplIkudodPgAA1tB1J/uFI7EAAAAASUVORK5CYII=
 // @grant        none
 // @match        https://*/*
 // @run-at       document-end
