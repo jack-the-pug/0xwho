@@ -126,9 +126,11 @@ class OXWHOInject{
         if(this.isAddress(text)){
             text = text.toLowerCase()
             if(el.childNodes.length === 0) el = el.parentElement
-            const position = this.getPosition(el)
             const profile = this.addressMap.get(text.toLowerCase())
-            this.addTooltip(position,profile)
+            if(profile){
+                const position = this.getPosition(el)
+                this.addTooltip(position,profile)
+            }
             return
         }
 
